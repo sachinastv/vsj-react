@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 
 const  VsjExpenseCalculator = (props) =>
 {
+	const expenses=
+	[
+{item:"Pepsi",amount:100,tdate:new Date(2022,2,10)},
+{item:"Coke",amount:10,tdate:new Date(2022,1,10)}
+
+	];
 	const [
 	expenseData, setExpense] = useState({
 		id:Math.round(100000*Math.random()),
@@ -55,6 +61,12 @@ const  VsjExpenseCalculator = (props) =>
 	
 	
 	return  <form onSubmit={submitHandler}>
+		{expenses.map(x=> <h2>{x.item}</h2>)}
+
+		
+		<h2>{expenses.length}</h2>
+		<h2>{expenses[0].item}</h2>
+		<h2>{expenses[1].item}</h2>
   <div class="form-group">
     <label for="item">Item</label>
     <input type="text" class="form-control" value={expenseData.item} onChange={itemChangeHandler} placeholder="Enter Item" id="item"/>
