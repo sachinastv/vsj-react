@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import VsjA from './components/VsjA';
+import VsjB from './components/VsjB';
 
 
 //
@@ -20,7 +21,7 @@ function App(props) {
     <div className="App">
       <h2>from VsjA {mydata}</h2>
       <VsjA onSaveData={saveData}/>
-     
+     <VsjB n1={mydata}></VsjB>
      
     </div>
   );
