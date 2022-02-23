@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import VsjA from './components/VsjA';
-import VsjB from './components/VsjB';
+import VsjStyle from './components/VsjStyle';
+
 
 
 //
@@ -19,9 +19,9 @@ function App(props) {
   };
   return (
     <div className="App">
-      <h2>from VsjA {mydata}</h2>
-      <VsjA onSaveData={saveData}/>
-     <VsjB n1={mydata}></VsjB>
+      <h2>from VsjStyle {mydata}</h2>
+      <VsjStyle onSaveData={saveData}/>
+     
      
     </div>
   );
