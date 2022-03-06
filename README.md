@@ -5,4 +5,5 @@
  3. Then create a react app  npx create-react-app my-react
  4. Then goto the my-react directory using cd my-react and type npm start
  5. The react app runs![image](https://user-images.githubusercontent.com/68769644/132157066-aac61abe-41ba-4549-b3af-7b6cfaa203a3.png)
+6. The running app ![image](https://user-images.githubusercontent.com/68769644/156908487-0a08d812-4c61-4206-bb28-ec22d3991469.png)
 
