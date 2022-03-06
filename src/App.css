@@ -1,12 +1,30 @@
 .App {
   text-align: center;
 }
-
+h2{
+  box-shadow: 10px 10px lightblue;
+}
+button {
+  background-color: teal;
+  border: none;
+  border-radius: 10px;
+  text-shadow: 2px 2px 4px red;
+  box-shadow: 10px 10px lightblue;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 table {
+  box-shadow: 10px 10px lightblue;
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 150px;
