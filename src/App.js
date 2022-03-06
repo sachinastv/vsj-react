@@ -10,7 +10,7 @@ import './App.css';
 function App(props) {
 
 
-  const [movies, setMovies] = useState([{ title: "" }]);
+  const [movies, setMovies] = useState([{ title: "",characters:[] }]);
   async function getMoviesHandler() {
     const response = await fetch("https://swapi.dev/api/films");
     console.log(response);
