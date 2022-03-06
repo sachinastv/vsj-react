@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -19,18 +19,30 @@ function App(props) {
     setMovies(data.results);
 
   }
+  useEffect(() => {
+    getMoviesHandler();
 
+  });
   return (
     <div className="App">
       <button onClick={getMoviesHandler}>Click</button>
-      <h2>Star Wars API</h2>
-      <h2>{movies[0].title}</h2>
-      <h2>{movies.length}</h2>
-      <ul>
+      <h2>Star Wars API {movies.length}</h2>
+
+      <table>
+        <tr><th>People</th><th>Movie</th></tr>
         {movies.map((movie, index) => (
-          <li key={index}>{movie.title}</li>
+          <tr><td>
+            <table>
+              {movie.characters.map((character, key) => (
+                <tr><td>{character}</td></tr>
+              ))}
+            </table>
+
+          </td><td>{movie.title}</td></tr>
+
+
         ))}
-      </ul>
+      </table>
 
     </div>
   );
