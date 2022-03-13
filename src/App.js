@@ -10,40 +10,33 @@ import './App.css';
 function App(props) {
 
 
-  const [movies, setMovies] = useState([{ title: "",characters:[] }]);
-  async function getMoviesHandler() {
-    const response = await fetch("https://swapi.dev/api/films");
+  const [weather, setWeather] = useState([{ name: "",main:[]}]);
+  const [mn, setMain] = useState([{ main:[]}]);
+  async function getWeatherHandler() {
+    const city="varanasi";
+    const appid="4a1f8a61b74546825af1e0be106e797b";
+    const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=varanasi&appid=4a1f8a61b74546825af1e0be106e797b&units=metric");
     console.log(response);
     const data = await response.json();
     console.log(data);
-    setMovies(data.results);
+    setWeather(data);
+    setMain(data.main);
 
   }
   useEffect(() => {
-    getMoviesHandler();
+    //getWeatherHandler();
 
   });
   return (
     <div className="App">
-      <button onClick={getMoviesHandler}>Click</button>
-      <h2>Star Wars API {movies.length}</h2>
+      <button onClick={getWeatherHandler}>Click</button>
+      <h2>weather {weather.name}</h2>
+      <h2>weather {mn.temp}</h2>
 
-      <table>
-        <tr><th>People</th><th>Movie</th></tr>
-        {movies.map((movie, index) => (
-          <tr><td>
-            <table>
-              {movie.characters.map((character, key) => (
-                <tr><td>{character}</td></tr>
-              ))}
-            </table>
-
-          </td><td>{movie.title}</td></tr>
+          
 
 
-        ))}
-      </table>
-
+      
     </div>
   );
 }
