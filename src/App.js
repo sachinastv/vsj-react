@@ -13,9 +13,9 @@ function App(props) {
   const [weather, setWeather] = useState([{ name: "",main:[]}]);
   const [mn, setMain] = useState([{ main:[]}]);
   async function getWeatherHandler() {
-    const city="varanasi";
+    const city="jaunpur";
     const appid="4a1f8a61b74546825af1e0be106e797b";
-    const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=varanasi&appid=4a1f8a61b74546825af1e0be106e797b&units=metric");
+    const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + appid + "&units=metric");
     console.log(response);
     const data = await response.json();
     console.log(data);
