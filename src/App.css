@@ -66,7 +66,7 @@ table th {
 }
 
 .App-link {
-  color: #61dafb;
+  color: #61fb8f;
 }
 
 @keyframes App-logo-spin {
@@ -76,4 +76,27 @@ table th {
   to {
     transform: rotate(360deg);
   }
-}
+  
+  }
+  .main_div{
+    width:100%;
+    height:150vh;
+    background: #61dafb;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .center_div{
+    width: 50%;
+    height: 120vh;
+    background-color: rgb(245, 240, 255);
+    box-shadow: 5px 5px 25px -5px rgba(2, 2, 2, 0.5);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
