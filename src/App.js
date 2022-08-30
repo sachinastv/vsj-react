@@ -1,7 +1,7 @@
 import VsjForm from './components/VsjForm';
 import Weather from './components/Weather';
 import About from './components/About';
-//import { BrowserRouter, Routes, Route } from "react-router-dom";
+import VsjLocalStorage from './components/VsjLocalStorage';
 import {
 	BrowserRouter as Router,
 	Routes,
@@ -20,22 +20,12 @@ import './App.css';
 function App() {
   
     return (
-       <Router>
-           <div className="App">
-           <ul>
-    
-      <li>
-        <Link to="/about">About Us</Link>
-      </li>
-    
-    </ul>
-    <Routes>
-                 
-                 <Route exact path='/about' element={< About />}></Route>
-                 
-          </Routes>
+      
+       <div>
+        <VsjLocalStorage/>
            </div>
-       </Router>
+       
+       
    );
   
 }
