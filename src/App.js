@@ -1,7 +1,7 @@
 import VsjForm from './components/VsjForm';
 import Weather from './components/Weather';
 import About from './components/About';
-import VsjLocalStorage from './components/VsjLocalStorage';
+import MapUse from './components/MapUse';
 import {
 	BrowserRouter as Router,
 	Routes,
@@ -22,7 +22,7 @@ function App() {
     return (
       
        <div>
-        <VsjLocalStorage/>
+        <MapUse data={[1,2,3,4]}/>
            </div>
        
        
