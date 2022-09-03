@@ -8,4 +8,7 @@
  6. The running app ![image](https://user-images.githubusercontent.com/68769644/156908487-0a08d812-4c61-4206-bb28-ec22d3991469.png)
  7. ![image](https://user-images.githubusercontent.com/68769644/156909921-c305f201-dd40-4603-ad7d-c1b0711df171.png)
 
+Map
+
+![image](https://user-images.githubusercontent.com/68769644/187828243-d4512e3c-c21b-435d-b4ec-e661d68b8fe8.png)
 
