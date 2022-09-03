@@ -1,35 +1,42 @@
 import React, { useState } from 'react';
 import './si.css';
 const Si = (props) => {
-
-    const [p, setP] = useState(0);
-    const [r, setR] = useState(0);
-    const [t, setT] = useState(0);
-
-    const pChangeHandler = (event) => {
-
-        console.log("P Changed");
-        console.log(event.target.value);
-        setP(Number(event.target.value));
-
-    };
-
-    const rChangeHandler = (event) => {
-
-        console.log("R Changed");
-        console.log(event.target.value);
-        setR(Number(event.target.value));
-
-    };
-
-
-    const tChangeHandler = (event) => {
-
-        console.log("T Changed");
-        console.log(event.target.value);
-        setT(Number(event.target.value));
-
-    };
+    const [
+        prt, setPRT] = useState({
+            p:0,
+            r:0,
+            t:0,
+            
+            
+            
+        });
+        const setP=(event)=>
+        {
+            setPRT( (prevState)=>{
+                return {...prevState,p:Number(event.target.value)};
+                
+            });
+            console.log("Object Changed");
+            
+        };
+        const setR=(event)=>
+        {
+            setPRT( (prevState)=>{
+                return {...prevState,r:Number(event.target.value)};
+                
+            });
+            console.log("Object Changed");
+            
+        };
+        const setT=(event)=>
+        {
+            setPRT( (prevState)=>{
+                return {...prevState,t:Number(event.target.value)};
+                
+            });
+            console.log("Object Changed");
+            
+        };
 
 
 
@@ -37,10 +44,13 @@ const Si = (props) => {
     return (
         <div>
             <h3>Simple Interest</h3>
-            <input type="number" onChange={pChangeHandler} />
-            <input type="number" onChange={rChangeHandler} />
-            <input type="number" onChange={tChangeHandler} />
-            <h2>P={p} ,R= {r} ,T= {t},Si={(p * r * t) / 100}</h2>
+           P <input type="number" onChange={setP} />
+           <br></br>
+          R  <input type="number" onChange={setR} />
+          <br></br>
+          T  <input type="number" onChange={setT} />
+            
+            <h2>{prt.p*prt.r*prt.t/100}</h2>
 
         </div>
     );
