@@ -1,7 +1,8 @@
-import Si from './components/Si';
+import Si from './components/UpdateArray';
 
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import UpdateArray from './components/UpdateArray';
 
 
 
@@ -13,7 +14,7 @@ function App() {
     return (
       
        <div>
-        <Si/>
+        <UpdateArray/>
            </div>
        
        
