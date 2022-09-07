@@ -1,4 +1,4 @@
-import {useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 const UpdateArray = () => {
     const inputName = useRef();
@@ -13,8 +13,8 @@ const UpdateArray = () => {
 
     const updateName = () => {
         const newName = data.map(current => {
-            
-            if (current.rollno === Number( inputRollno.current.value)) {
+
+            if (current.rollno === Number(inputRollno.current.value)) {
                 return { ...current, name: inputName.current.value };
             }
 
@@ -24,7 +24,7 @@ const UpdateArray = () => {
         setData(newName);
     };
     const addName = () => {
-        data.push({ rollno:Number( inputRollno.current.value), name: inputName.current.value });
+        data.push({ rollno: Number(inputRollno.current.value), name: inputName.current.value });
         const newName = data.map(current => {
             return current;
         });
@@ -34,11 +34,6 @@ const UpdateArray = () => {
 
     return (
         <div>
-            Roll No   <input type="text" ref={inputRollno} />
-            <br/>
-           Name   <input type="text" ref={inputName} />
-            <button onClick={updateName}>Update name</button>
-            <button onClick={addName}>Add name</button>
             {data.map(current => {
                 return (
                     <div key={current.rollno}>
@@ -48,6 +43,12 @@ const UpdateArray = () => {
                     </div>
                 );
             })}
+            Roll No   <input type="text" ref={inputRollno} />
+            <br />
+            Name   <input type="text" ref={inputName} />
+            <button onClick={updateName}>Update name</button>
+            <button onClick={addName}>Add name</button>
+
         </div>
     );
 };
