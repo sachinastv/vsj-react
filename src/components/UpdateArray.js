@@ -31,6 +31,14 @@ const UpdateArray = () => {
 
         setData(newName);
     };
+    const removeName = () => {
+        data.splice(0,1);
+        const newName = data.map(current => {
+            return current;
+        });
+
+        setData(newName);
+    };
 
     return (
         <div>
@@ -48,6 +56,7 @@ const UpdateArray = () => {
             Name   <input type="text" ref={inputName} />
             <button onClick={updateName}>Update name</button>
             <button onClick={addName}>Add name</button>
+            <button onClick={removeName}>Del name</button>
 
         </div>
     );
