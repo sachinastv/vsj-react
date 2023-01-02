@@ -1,25 +1,14 @@
-import Si from './components/UpdateArray';
-
-import React, { useEffect, useState } from 'react';
+import logo from './logo.svg';
 import './App.css';
-import UpdateArray from './components/UpdateArray';
-
-
-
-
-//
+import HelloEffect from './components/HelloEffect';
 
 function App() {
-  
-    return (
-      
-       <div>
-        <UpdateArray/>
-           </div>
-       
-       
-   );
-  
+  return (
+    <div className="App">
+      <h1>Varanasi Software Junction</h1>
+      <HelloEffect/>
+    </div>
+  );
 }
 
 export default App;
