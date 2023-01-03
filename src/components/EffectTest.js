@@ -16,6 +16,7 @@ function EffectTest() {
             <h3>One {one}</h3>
             <h3>Two {two}</h3>
             <input type="text" onChange={oneChangeHandler} />
+            
         </center>
     </div>;
 }
