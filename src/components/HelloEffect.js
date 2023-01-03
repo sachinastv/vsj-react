@@ -6,10 +6,10 @@ import './HelloEffect.css';
 function HelloEffect() {
     const baseURL = "https://swapi.py4e.com/api/people/1/";
 
-    const [films, setFilms] = React.useState(null);
-    const [star, setStar] = React.useState(null);
+    const [films, setFilms] = useState(null);
+    const [star, setStar] = useState(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
         axios.get(baseURL).then((response) => {
 
             setStar(response.data);

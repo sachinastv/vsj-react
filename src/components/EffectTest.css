@@ -1,0 +1,7 @@
+.effectdiv
+{
+  width: fit-content;
+  border-width: 2px;
+  border-color: blue;
+  border-style: ridge;
+}
