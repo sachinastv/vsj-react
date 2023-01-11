@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import HelloEffect from './components/HelloEffect';
+import VsjButton from './components/VsjButton.';
 
 function App() {
   return (
     <div className="App">
-      <h1>Varanasi Software Junction</h1>
-      <HelloEffect/>      
+      <h1>Varanasi Software Junction</h1> 
+      <VsjButton/>    
     </div>
   );
 }
