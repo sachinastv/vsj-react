@@ -17,17 +17,17 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
-import Chart from './Chart';
-import Deposits from './Deposits';
-import Orders from './Orders';
+import { VsjMainListItems, VsjSecondListItems, VsjThirdListItems } from './VsjListItems';
+import VsjChart from './VsjChart';
+import VsjDeposits from './VsjDeposits';
+import VsjOrders from './VsjOrders';
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link target="vsj" color="inherit" href="https://varanasisoftwarejunction.blogspot.com/">
+        Varanasi Software Junction
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -118,10 +118,10 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              Vsj Dashboard
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
+              <Badge badgeContent={10} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
@@ -142,9 +142,12 @@ function DashboardContent() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            {mainListItems}
+            {VsjThirdListItems}
             <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
+            {VsjMainListItems}
+            <Divider sx={{ my: 1 }} />
+            {VsjSecondListItems}
+
           </List>
         </Drawer>
         <Box
@@ -172,7 +175,7 @@ function DashboardContent() {
                     height: 240,
                   }}
                 >
-                  <Chart />
+                  <VsjChart />
                 </Paper>
               </Grid>
               {/* Recent Deposits */}
@@ -185,13 +188,13 @@ function DashboardContent() {
                     height: 240,
                   }}
                 >
-                  <Deposits />
+                  <VsjDeposits />
                 </Paper>
               </Grid>
               {/* Recent Orders */}
               <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Orders />
+                <Paper sx={{ p: 1, display: 'flex', flexDirection: 'column' }}>
+                  <VsjOrders />
                 </Paper>
               </Grid>
             </Grid>
@@ -203,6 +206,6 @@ function DashboardContent() {
   );
 }
 
-export default function Dashboard() {
+export default function VsjDashboard() {
   return <DashboardContent />;
 }
