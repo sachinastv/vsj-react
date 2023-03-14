@@ -1,11 +1,11 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Blog from './components/Blog';
+import Checkout from './components/CheckOut';
 function App() {
   return (
     <div className="App">
     <h1>Varanasi Software Junction</h1>
-      <Blog/>
+    <Checkout/>
     </div>
   );
 }
