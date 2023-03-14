@@ -5,11 +5,16 @@ import { FiCircle } from "react-icons/fi"; // Importing icon from react-icons/fi
 
 const App = () => {
   // Functional component named App
-  const [filter, setFilter] = useState([]); // Declaring state variable todos as an empty array using useState hook 
+  const [filter, setFilter] = useState(0); // Declaring state variable todos as an empty array using useState hook
   const [todos, setTodos] = useState([]); // Declaring state variable todos as an empty array using useState hook
   const [todoItem, setTodoItem] = useState(""); // Declaring state variable todoItem as an empty string using useState hook
   const [error, setError] = useState(false); // Declaring state variable error as false using useState hook
   const [completedTasks, setCompletedTasks] = useState(""); // Declaring state variable completedTasks as an empty string using useState hook
+
+  const handleFilter = (e) => {
+    console.log(e.target);
+    setFilter(e.target.value);
+  };
 
   // Function to add todo items
   const handleSubmit = (e) => {
@@ -106,12 +111,24 @@ const App = () => {
         </div>
         <div className="data-card-container">
           <div className="data-card">
-            <input checked value="0" type="radio" name="filter" />
+          <label>Show  <input
+              onChange={handleFilter}
+              
+              value="0"
+              type="radio"
+              name="filter"
+            /></label>
             <h5>{todos.length < 10 ? `0${todos.length}` : todos.length}</h5>
             <p>Created tasks</p>
           </div>
           <div className="data-card">
-            <input value="1" type="radio" name="filter" />
+          <label>Show
+            <input
+              onChange={handleFilter}
+              value="1"
+              type="radio"
+              name="filter"
+            /></label>
             <h5>
               {completedTasks < 10 ? `0${completedTasks}` : completedTasks}
             </h5>
@@ -119,7 +136,12 @@ const App = () => {
           </div>
 
           <div className="data-card">
-            <input value="2" type="radio" name="filter" />
+          <label>Show<input
+              onChange={handleFilter}
+              value="2"
+              type="radio"
+              name="filter"
+            /></label>
             <h5>
               {todos.length - completedTasks < 10
                 ? `0${todos.length - completedTasks}`
@@ -131,8 +153,8 @@ const App = () => {
       </div>
       <div className="todo-container">
         {todos.map((todoItem) => {
-          //if (todoItem.complete)
-		   {
+          if ((filter==0) ||(filter==1 && todoItem.complete) ||(filter==2 && (!todoItem.complete)))
+          {
             const { id, todo, complete } = todoItem;
             return (
               <div key={id} className="todo-card">
