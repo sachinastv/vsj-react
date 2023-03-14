@@ -30,7 +30,7 @@ const sections = [
 ];
 
 const mainFeaturedPost = {
-  title: 'Title of a longer featured blog post',
+  title: 'Hello Post',
   description:
     "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
   image: 'https://source.unsplash.com/random',
@@ -44,7 +44,7 @@ const featuredPosts = [
     date: 'Nov 12',
     description:
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
+    image: 'https://3.bp.blogspot.com/-py5FbTZgvjo/YDi1bsQq16I/AAAAAAAACB0/BxejbJBcHA4AVfkB33WYC3YlVmxElM7BwCK4BGAYYCw/s1600/Varanasi%2BSoftware%2BJunction%2BPhone%2BLogo.png',
     imageLabel: 'Image Text',
   },
   {
@@ -52,7 +52,7 @@ const featuredPosts = [
     date: 'Nov 11',
     description:
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
+    image: 'https://3.bp.blogspot.com/-py5FbTZgvjo/YDi1bsQq16I/AAAAAAAACB0/BxejbJBcHA4AVfkB33WYC3YlVmxElM7BwCK4BGAYYCw/s1600/Varanasi%2BSoftware%2BJunction%2BPhone%2BLogo.png',
     imageLabel: 'Image Text',
   },
 ];
