@@ -75,7 +75,12 @@ body {
   border-radius: 5px;
   flex-basis: 33%;
 }
-
+.data-card:hover
+{
+  border-color: red;
+  border-style: ridge;
+  transition: 5s;
+}
 .data-card:last-child{
   text-align: right;
 }

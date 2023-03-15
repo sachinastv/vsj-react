@@ -111,24 +111,28 @@ const App = () => {
         </div>
         <div className="data-card-container">
           <div className="data-card">
-          <label>Show  <input
-              onChange={handleFilter}
-              
-              value="0"
-              type="radio"
-              name="filter"
-            /></label>
+            <label>
+              Show{" "}
+              <input
+                onChange={handleFilter}
+                value="0"
+                type="radio"
+                name="filter"
+              />
+            </label>
             <h5>{todos.length < 10 ? `0${todos.length}` : todos.length}</h5>
             <p>Created tasks</p>
           </div>
           <div className="data-card">
-          <label>Show
-            <input
-              onChange={handleFilter}
-              value="1"
-              type="radio"
-              name="filter"
-            /></label>
+            <label>
+              Show
+              <input
+                onChange={handleFilter}
+                value="1"
+                type="radio"
+                name="filter"
+              />
+            </label>
             <h5>
               {completedTasks < 10 ? `0${completedTasks}` : completedTasks}
             </h5>
@@ -136,12 +140,15 @@ const App = () => {
           </div>
 
           <div className="data-card">
-          <label>Show<input
-              onChange={handleFilter}
-              value="2"
-              type="radio"
-              name="filter"
-            /></label>
+            <label>
+              Show
+              <input
+                onChange={handleFilter}
+                value="2"
+                type="radio"
+                name="filter"
+              />
+            </label>
             <h5>
               {todos.length - completedTasks < 10
                 ? `0${todos.length - completedTasks}`
@@ -153,8 +160,11 @@ const App = () => {
       </div>
       <div className="todo-container">
         {todos.map((todoItem) => {
-          if ((filter==0) ||(filter==1 && todoItem.complete) ||(filter==2 && (!todoItem.complete)))
-          {
+          if (
+            filter == 0 ||
+            (filter == 1 && todoItem.complete) ||
+            (filter == 2 && !todoItem.complete)
+          ) {
             const { id, todo, complete } = todoItem;
             return (
               <div key={id} className="todo-card">
