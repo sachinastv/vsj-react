@@ -1,15 +1,18 @@
-import React from 'react'; // Import the React library
-import ReactDOM from 'react-dom'; // Import the ReactDOM library
-import { createStore } from 'redux'; // Import the createStore function from the Redux library
-import { Provider } from 'react-redux'; // Import the Provider component from the react-redux library
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider, connect } from 'react-redux';
 
 // Define the initial state of the Redux store
-const initialState = { message: 'Hello, World!' };
+const initialState = { count: 0 };
 
 // Define the reducer function that will update the state of the Redux store
 function reducer(state = initialState, action) {
   switch (action.type) {
-    // Handle any actions here (none in this case)
+    case 'INCREMENT':
+      return { ...state, count: state.count + 1 };
+    case 'DECREMENT':
+      return { ...state, count: state.count - 1 };
     default:
       return state;
   }
@@ -18,20 +21,36 @@ function reducer(state = initialState, action) {
 // Create the Redux store using the reducer function
 const store = createStore(reducer);
 
-// Define the root React component
-function App() {
-  // Render the current state of the Redux store (the "message" property)
+// Define the Counter component
+function Counter(props) {
+  // Define the event handlers for the "increment" and "decrement" buttons
+  const handleIncrement = () => props.dispatch({ type: 'INCREMENT' });
+  const handleDecrement = () => props.dispatch({ type: 'DECREMENT' });
+
+  // Render the current count value and the "increment" and "decrement" buttons
   return (
     <div>
-      <h1>{store.getState().message}</h1>
+      <h1>Count: {props.count}</h1>
+      <button onClick={handleIncrement}>Increment</button>
+      <button onClick={handleDecrement}>Decrement</button>
     </div>
   );
 }
 
-// Render the root React component inside a Provider component, which provides the Redux store to all child components
+// Define the mapStateToProps function, which maps the state of the Redux store to props for the Counter component
+const mapStateToProps = state => {
+  return {
+    count: state.count
+  };
+}
+
+// Connect the Counter component to the Redux store using the connect function
+const ConnectedCounter = connect(mapStateToProps)(Counter);
+
+// Render the Counter component inside a Provider component, which provides the Redux store to all child components
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ConnectedCounter />
   </Provider>,
   document.getElementById('root')
 );
