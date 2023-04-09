@@ -1,26 +1,14 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { incrementCounter, decrementCounter } from './actions';
+import logo from './logo.svg';
+import './App.css';
 
-const App = ({ count, incrementCounter, decrementCounter }) => {
+
+function App() {
   return (
-    <div>
-      <h1>{count}</h1>
-      <button onClick={incrementCounter}>Increment</button>
-      <button onClick={decrementCounter}>Decrement</button>
+    <div className="App">
+      <h1>Varanasi Software Junction</h1>
+      
     </div>
   );
-};
+}
 
-const mapStateToProps = (state) => {
-  return {
-    count: state.count
-  };
-};
-
-const mapDispatchToProps = {
-  incrementCounter,
-  decrementCounter
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
