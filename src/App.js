@@ -1,15 +1,12 @@
-import logo from "./logo.svg";
+
 import "./App.css";
-import LineChart from "./components/LineChart";
+import CmpA from "./components/CmpA";
 function App() {
-  const data = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
-    data: [1, 2, 3, 4, 5, 6],
-    title:"My Line"
-  };
+
   return (
     <div className="App">
-      <LineChart data={data} />
+      Hi
+      <CmpA></CmpA>
     </div>
   );
 }
