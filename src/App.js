@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       Hi
-      <CmpA></CmpA>
+      <CmpA message="Champak"></CmpA>
     </div>
   );
 }
