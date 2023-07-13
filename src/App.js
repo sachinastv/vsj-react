@@ -1,12 +1,14 @@
 
 import "./App.css";
-import CmpA from "./components/CmpA";
+import ComponentA from "./components/ComponentA";
+
 function App() {
 
   return (
     <div className="App">
-      Hi
-      <CmpA message="Champak"></CmpA>
+      <ComponentA></ComponentA>
+      
+ 
     </div>
   );
 }
