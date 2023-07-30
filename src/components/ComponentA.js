@@ -1,54 +1,25 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-let j = 0;
+import React, { useState, useEffect } from 'react';
 
 const ComponentA = () => {
-    let baseURL = `https://gist.githubusercontent.com/champaksworldcreate/b5314c76cc15b44686c7151a8fb039b0/raw/d6020258eea665ef2929f901d88ae3d41e22ba6b/images.json`;
-    const [num, setNum] = useState(1);
+  const [count, setCount] = useState(0);
 
-    const [album, setAlbum] = useState([]);
-    const traverse = () => {
-    
-        if (j<4){
-            j = j + 1;
-        }
-        return j+1;
-  
-    }
-    useEffect(() => {
-        axios.get(baseURL).then((response) => {
-            setAlbum(response.data)
-            
-            
+  // The useEffect hook with 'count' as a dependency will run whenever 'count' changes
+  useEffect(() => {
+    // Display an alert when 'count' changes
+    alert(`Count changed to: ${count}`);
+  }, [count]); // 'count' is specified as the dependency
 
-        }).catch((error) => {
+  const handleIncrement = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
 
-            <h1>Error</h1>
-        });
+  return (
+    <div>
+      <h1>Effect With Variable</h1>
+      <p>Count: {count}</p>
+      <button onClick={handleIncrement}>Increment</button>
+    </div>
+  );
+};
 
-    },[])
-
-
-
-
-    return (
-        <div>
-            {console.log(album[0])}
-
-            {album.map((current) => {
-          return (
-            <ul className="liwidth" key={current}>
-              <li>
-                {" "}
-                <a target={"_blank"} href={current}>
-                  {current}
-                </a>
-              </li>
-            </ul>
-          );
-        })}
-            
-        </div>
-    )
-}
 export default ComponentA;
