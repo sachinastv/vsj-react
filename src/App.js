@@ -1,27 +1,15 @@
-import React,{useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import StateUp from './components/StateUp';
 
+import EffectTest from './components/EffectTest';
 
-//
-
-function App(props) {
-  const[mydata,setMyData]=useState('');
-  const saveData=(n1)=>{
-    
-    const data={...n1};
-    console.log("App");
-    
-    setMyData(n1);
-    console.log(mydata);
-  };
+function App() {
   return (
     <div className="App">
-      <h2>from StateUp in App js {mydata}</h2>
-      <StateUp onSaveData={saveData}/>
-     
-     
+      <h1>Varanasi Software Junction</h1>
+
+      <EffectTest />
+
     </div>
   );
 }
