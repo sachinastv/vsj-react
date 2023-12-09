@@ -1,14 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 
-import SwapiComponent from './components/SwapiComponent';
+import SwapiCall from './components/SwapiCall';
 
 function App() {
   return (
     <div className="App">
       <h1>Varanasi Software Junction</h1>
 
-      <SwapiComponent/>
+      <SwapiCall/>
 
     </div>
   );
